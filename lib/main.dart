@@ -54,12 +54,12 @@ class _MyHomePageState extends State<MyHomePage> {
             BlocConsumer<CounterCubit, CounterState>(
               listener: (context, state) {
                 if (state.wasIncremented == true) {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: Text("Incremented!"),
-                    duration: Duration(milliseconds: 300),
+                    duration:Duration(milliseconds: 300),
                   ));
                 } else if (state.wasIncremented == false) {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: Text("Decremented!"),
                     duration: Duration(milliseconds: 300),
                   ));
@@ -68,17 +68,17 @@ class _MyHomePageState extends State<MyHomePage> {
               builder: (context, state) {
                 if (state.counterValue < 0) {
                   return Text(
-                    'BRR,NEGATIVE ' + state.counterValue.toString(),
+                    'BRR,NEGATIVE ${state.counterValue}',
                     style: Theme.of(context).textTheme.headline4,
                   );
                 } else if (state.counterValue % 2 == 0) {
                   return Text(
-                    'YAAAY ' + state.counterValue.toString(),
+                    'YAAAY ${state.counterValue}',
                     style: Theme.of(context).textTheme.headline4,
                   );
                 } else if (state.counterValue == 5) {
                   return Text(
-                    'HMM, NUMBER 5 ' + state.counterValue.toString(),
+                    'HMM, NUMBER 5 ${state.counterValue}',
                     style: Theme.of(context).textTheme.headline4,
                   );
                 }

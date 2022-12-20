@@ -18,7 +18,7 @@ void main() {
         () {
       expect(counterCubit!.state, CounterState(counterValue: 0));
     });
-    blocTest<CounterCubit, CounterState>(
+    blocTest<CounterCubit, CounterState>(  
       'the cubit should emit a CounterState(counterValue:1,was incremented:true) when cubit.increment() function is called',
       build: () => CounterCubit(),
       act: (cubit) => cubit.increment(),
